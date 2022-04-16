@@ -4,7 +4,7 @@ Eine API zur Abfrage von Biersorten und einigen Funktionen
 ```mermaid
 sequenceDiagram
     autonumber
-    Note right of User: Frontend: Ich Infos über Bier!
+    Note right of Frontend: Ich brauche Infos über Bier!
     Frontend->>Backend: Gib mir Infos über das beste Bier!
     Backend->>Flapotest: GetBierData
     Flapotest-->>Backend: Bier JSON
