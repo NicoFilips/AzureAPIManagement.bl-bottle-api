@@ -1,0 +1,12 @@
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\bin\Debug\net6.0\FlaschenpostModels.deps.json
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\bin\Debug\net6.0\FlaschenpostModels.dll
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\bin\Debug\net6.0\FlaschenpostModels.pdb
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.csproj.AssemblyReference.cache
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.AssemblyInfoInputs.cache
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.AssemblyInfo.cs
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.csproj.CoreCompileInputs.cache
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.dll
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\refint\FlaschenpostModels.dll
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\FlaschenpostModels.pdb
+C:\Users\nicof\source\repos\FlaschenPostAPI\FlaschenpostModels\obj\Debug\net6.0\ref\FlaschenpostModels.dll
