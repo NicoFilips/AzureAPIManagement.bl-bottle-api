@@ -1,5 +1,5 @@
-# BierAPI
-Eine API zur Abfrage von Biersorten und einigen Funktionen
+# FlaschenpostAPI
+Dies ist eine simple REST API, die Daten von einer öffentlichen API abgreift
 
 ```mermaid
 sequenceDiagram
