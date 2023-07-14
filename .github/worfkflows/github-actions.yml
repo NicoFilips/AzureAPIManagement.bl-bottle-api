@@ -1,0 +1,43 @@
+name: .NET 6 CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+    - name: Publish Web API
+      run: dotnet publish Flaschenpost.api --no-build --configuration Release --output ./output
+      
+    - name: Pack CLI
+      run: dotnet pack Flaschenpost.core --no-build --configuration Release --output ./output
+
+    - name: Publish NuGet package
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+        dotnet-key: ${{ secrets.NUGET_API_KEY }} # Set this in your GitHub secrets
+      run: dotnet nuget push ./output/*.nupkg
