@@ -1,5 +1,5 @@
 # FlaschenpostAPI
-Dies ist eine simple REST API, die Daten von einer öffentlichen API abgreift
+This is just a simple REST API, it grabs data from a public API
 
 ```mermaid
 sequenceDiagram
