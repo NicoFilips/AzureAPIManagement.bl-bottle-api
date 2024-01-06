@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>FlaschenPostAPI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FlaschenpostModels\FlaschenpostModels.csproj" />
+    <ProjectReference Include="..\bl_bottle.core\bl_bottle.core.csproj" />
   </ItemGroup>
 
 </Project>
