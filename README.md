@@ -1,3 +1,15 @@
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+<a href="https://github.com/NicoFilips/CookieClicker.io/">
+  <img src="https://user-images.githubusercontent.com/35654361/298979265-c38a7196-367b-45fa-b9de-d746e54e2bf8.png" alt="Logo" width="200" height="200">
+</a>
+
+<blockquote>
+  <p>Source: DALL-E 3</p>
+</blockquote>
+
+
 # 🍺 bl_bottleApi API 🚀
 
 Ahoy, mateys! Welcome aboard the BottlePost API! This API is like a digital message in a bottle, tossed into the vast ocean of the internet to bring you the best data on brews from public shores. 🌊
