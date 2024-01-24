@@ -18,7 +18,7 @@ namespace FlaschenPostAPI.Repo
             return BeerHelper.GetBeerData();
         }
         
-        public List<Beer> GetBeersByPrice(double price)
+        public List<Beer> getBeersByExactPrice(double price)
         {
             List<Beer> ListofBeers = BeerHelper.GetBeerData();
             List<Beer> RtnList = new List<Beer>();
