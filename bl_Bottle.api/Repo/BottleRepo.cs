@@ -7,7 +7,7 @@ using FlaschenpostModels.Models;
 
 namespace FlaschenPostAPI.Repo
 {
-    public class FlaschenpostGetRepo : IBierGetRepo
+    public class BottleRepo : IBottleRepo
     {
         public List<Beer> GetCheapestBeer()
         {
@@ -17,11 +17,7 @@ namespace FlaschenPostAPI.Repo
         {
             return BeerHelper.GetBeerData();
         }
-
-        /// <summary>
-        /// Gibt die Angebote von Bier zurück, die dem übergebenen Preis entsprechen
-        /// -> Keine Userstory dazu, jedoch für mich ohne Erfahrung über Domain wesentlich sinnvoller
-        /// </summary>
+        
         public List<Beer> GetBeersByPrice(double price)
         {
             List<Beer> ListofBeers = BeerHelper.GetBeerData();
@@ -41,12 +37,9 @@ namespace FlaschenPostAPI.Repo
                     }
                 }
             }
-                return RtnList;
+            return RtnList;
         }
-        /// <summary>
-        /// Gibt das erste Angebot zurück, welches die Meisten Flaschen besitzt
-        /// "Which one product comes in the most bottles?"
-        /// </summary>
+
         public Article GetMostbootledBeer()
         {
             List<Beer> ListofBeers = BeerHelper.GetBeerData();
@@ -74,10 +67,7 @@ namespace FlaschenPostAPI.Repo
             }
             return article;
         }
-
-        /// <summary>
-        /// Gibt das teuerste Bier im Sortiment zurück
-        /// </summary>
+        
         public List<Beer> GetMostExpensiveBeer()
         {
             List<Beer> ListofBeers = BeerHelper.GetBeerData();
@@ -93,10 +83,7 @@ namespace FlaschenPostAPI.Repo
             }
             return MostExpensiveBeer;
         }
-
-        /// <summary>
-        /// Zwinkersmiley
-        /// </summary>
+        
         public Beer GetBestBeer()
         {
             return BeerHelper.GetBeerData().Where(Beer => Beer.Id == 70).FirstOrDefault();
