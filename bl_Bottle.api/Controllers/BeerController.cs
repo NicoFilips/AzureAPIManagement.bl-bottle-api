@@ -17,14 +17,14 @@ namespace FlaschenPostAPI.Controllers
         
         [HttpGet]
         [Route("TeuerstesBier")]
-        public List<Beer> GetTeuerstesBier()
+        public List<Beer> GetMostExpensiveBeverage()
         {
             return _bottleRepo.GetMostExpensiveBeer();
         }
 
         [HttpGet]
         [Route("BilligstesBier")]
-        public List<Beer> GetBilligstesBier()
+        public List<Beer> GetCheapestBeverage()
         {
             return _bottleRepo.GetCheapestBeer();
         }
@@ -34,14 +34,14 @@ namespace FlaschenPostAPI.Controllers
         [Route("BeerWithPrice17_99")]
         public IEnumerable<Beer> GetBeersbyPrice()
         {
-            return _bottleRepo.getBeersByExactPrice(17.99);
+            return _bottleRepo.GetBeersByExactPrice(17.99);
         }
 
         [HttpGet]
         [Route("MostBottledBeer")]
         public Article GetBeersWithMostBottles()
         {
-            return _bottleRepo.GetMostbootledBeer();
+            return _bottleRepo.GetMostBottledBeer();
         }
     }
 }

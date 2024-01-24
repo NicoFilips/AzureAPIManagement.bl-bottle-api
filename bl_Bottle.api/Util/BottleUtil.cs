@@ -23,7 +23,7 @@ namespace FlaschenPostAPI.Util
 
         public double BeerpricePerLitre(string pricePerUnit) 
         {
-            if (Regex.IsMatch(pricePerUnit, "\\((.*?)\\)")) //Feld muss zwischen Klammern stehen
+            if (Regex.IsMatch(pricePerUnit, "\\((.*?)\\)")) 
             {
                 string[] units = pricePerUnit.Split('/');
                 if (units[1].Contains("Liter")) 
@@ -31,8 +31,9 @@ namespace FlaschenPostAPI.Util
                     return double.Parse(units[0].Trim().Replace("€","").Replace("(",""));
                 }
             }
-            throw new Exception("Das JSON Feld hat nicht das richtige Format");
+            throw new Exception("Json is not correctly formatted");
         }
+        
         public double GetAmountBottles(string shortDescription) 
         {
             return Double.Parse(shortDescription.Split("x")[0].Trim());

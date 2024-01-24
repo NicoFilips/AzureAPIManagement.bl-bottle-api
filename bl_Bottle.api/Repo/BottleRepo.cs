@@ -8,90 +8,71 @@ namespace FlaschenPostAPI.Repo
 {
     public class BottleRepo : IBottleRepo
     {
-        private IBottleUtil BottleUtil { get; set; }
+        private IBottleUtil _bottleUtil { get; set; }
         public BottleRepo(IBottleUtil bottleUtil)
         {
-            BottleUtil = bottleUtil;
+            _bottleUtil = bottleUtil;
         }
 
         public List<Beer> GetCheapestBeer()
         {
-            return null;
-        }
-        public List<Beer> GetAllBeer()
-        {
-            return BottleUtil.GetBeerData();
+            var listOfBeers = _bottleUtil.GetBeerData();
+
+            // Finden des niedrigsten Preises in allen Angeboten
+            var minPrice = listOfBeers
+                .SelectMany(beer => beer.Offers)
+                .Min(offer => offer.price);
+
+            // Filtern der Biere, die Angebote mit dem niedrigsten Preis haben
+            return listOfBeers
+                .Where(beer => beer.Offers.Any(offer => offer.price == minPrice))
+                .ToList();
         }
         
-        public List<Beer> getBeersByExactPrice(double price)
+        public List<Beer> GetAllBeer()
         {
-            List<Beer> ListofBeers = BottleUtil.GetBeerData();
-            List<Beer> RtnList = new List<Beer>();
+            return _bottleUtil.GetBeerData();
+        }
+        
+        public List<Beer> GetBeersByExactPrice(double price)
+        {
+            var listOfBeers = _bottleUtil.GetBeerData();
+            
+            var beersWithExactPrice = listOfBeers
+                .Where(beer => beer.Offers.Any(offer => offer.price == price))
+                .ToList();
 
-            foreach (var Beer in ListofBeers)
-            {
-                bool isExactPrice = false;
-                foreach (var Article in Beer.Offers)
-                {
-                    if (Article.price == 17.99)
-                    {
-                        if (isExactPrice == true)
-                        {
-                            RtnList.Add(Beer);
-                        }
-                    }
-                }
-            }
-            return RtnList;
+            return beersWithExactPrice;
         }
 
-        public Article GetMostbootledBeer()
+        public Article GetMostBottledBeer()
         {
-            List<Beer> ListofBeers = BottleUtil.GetBeerData();
-            Article article = null;
-            foreach (Beer Beer in ListofBeers)
-            {
-                foreach (Article BeerArticle in Beer.Offers)
-                {
-                    if (article == null)
-                    {
-                        article = BeerArticle;
-                    }
-                    else
-                    {
-                        double ThisArcticleBottles = BottleUtil.GetAmountBottles(article.pricePerUnitText);
-                        double NextArticleBottles = BottleUtil.GetAmountBottles(BeerArticle.pricePerUnitText);
-
-                        //Der erste Eintrag mit der höchsten Anzahl verändert sich so nicht mehr
-                        if (ThisArcticleBottles < NextArticleBottles) 
-                        {
-                            article = BeerArticle;
-                        }
-                    }
-                }
-            }
-            return article;
+            var listOfBeers = _bottleUtil.GetBeerData();
+            
+            return listOfBeers
+                .SelectMany(beer => beer.Offers, (beer, offer) => new { Beer = beer, Offer = offer })
+                .OrderByDescending(x => _bottleUtil.GetAmountBottles(x.Offer.pricePerUnitText))
+                .Select(x => x.Offer)
+                .FirstOrDefault();
         }
         
         public List<Beer> GetMostExpensiveBeer()
         {
-            List<Beer> ListofBeers = BottleUtil.GetBeerData();
-            List<Beer> MostExpensiveBeer = new List<Beer>();
-            MostExpensiveBeer.Add(ListofBeers[0]);
-
-            foreach (var Beer in ListofBeers)
-            {
-                foreach (var Article in Beer.Offers)
-                {
-
-                }
-            }
-            return MostExpensiveBeer;
+            var listOfBeers = _bottleUtil.GetBeerData();
+            
+            var maxPrice = listOfBeers
+                .SelectMany(beer => beer.Offers)
+                .Max(offer => offer.price);
+            
+            return listOfBeers
+                .Where(beer => beer.Offers.Any(offer => offer.price == maxPrice))
+                .ToList();
         }
         
         public Beer GetBestBeer()
         {
-            return BottleUtil.GetBeerData().Where(Beer => Beer.Id == 70).FirstOrDefault();
+            //Note: this is unbiased and objective (o^.^)o
+            return _bottleUtil.GetBeerData().Where(Beer => Beer.Id == 70).FirstOrDefault();
         }
     }
 }

@@ -13,15 +13,16 @@ namespace FlaschenpostModels.Interfaces.Repositories
         /// returns the cheapest beer
         /// </summary>
         List<Beer> GetCheapestBeer();
+        
         /// <summary>
         /// returns the beverages with the exact price
         /// </summary>
-        List<Beer> getBeersByExactPrice(double Preis);
+        List<Beer> GetBeersByExactPrice(double price);
         
         /// <summary>
         /// Get Beverages with the most amount of bottles
         /// </summary>
-        Article GetMostbootledBeer();
+        Article GetMostBottledBeer();
 
         /// <summary>
         /// Zwinkersmiley
