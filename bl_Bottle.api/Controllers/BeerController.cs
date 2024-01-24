@@ -16,32 +16,38 @@ namespace FlaschenPostAPI.Controllers
         }
         
         [HttpGet]
-        [Route("TeuerstesBier")]
+        [Route("MostExpensiveBeverage")]
         public List<Beer> GetMostExpensiveBeverage()
         {
             return _bottleRepo.GetMostExpensiveBeer();
         }
 
         [HttpGet]
-        [Route("BilligstesBier")]
+        [Route("CheapestBeverage")]
         public List<Beer> GetCheapestBeverage()
         {
             return _bottleRepo.GetCheapestBeer();
         }
-
-        //Auf Parameter zwecks Requesthandling verzichtet
+        
         [HttpGet]
-        [Route("BeerWithPrice17_99")]
-        public IEnumerable<Beer> GetBeersbyPrice()
+        [Route("BeverageByPrice/{price}")]
+        public IEnumerable<Beer> GetBeersbyPrice(double price)
         {
-            return _bottleRepo.GetBeersByExactPrice(17.99);
+            return _bottleRepo.GetBeersByExactPrice(price);
         }
 
         [HttpGet]
-        [Route("MostBottledBeer")]
+        [Route("MostBottledBeverage")]
         public Article GetBeersWithMostBottles()
         {
             return _bottleRepo.GetMostBottledBeer();
+        }
+        
+        [HttpGet]
+        [Route("GetBestBeverage")]
+        public Beer GetBestBeverage()
+        {
+            return _bottleRepo.GetBestBeer();
         }
     }
 }
