@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bl_Bottle.api", "bl_Bottle.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bl_bottle.core", "bl_bottle.core\bl_bottle.core.csproj", "{A850DD7A-79BE-46BA-BD99-86C43892EB39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bl_Bottle.test", "bl_Bottle.test\bl_Bottle.test.csproj", "{91FC02FC-83B9-46AF-A473-F8C0064C49D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A850DD7A-79BE-46BA-BD99-86C43892EB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A850DD7A-79BE-46BA-BD99-86C43892EB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A850DD7A-79BE-46BA-BD99-86C43892EB39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FC02FC-83B9-46AF-A473-F8C0064C49D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FC02FC-83B9-46AF-A473-F8C0064C49D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FC02FC-83B9-46AF-A473-F8C0064C49D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FC02FC-83B9-46AF-A473-F8C0064C49D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
