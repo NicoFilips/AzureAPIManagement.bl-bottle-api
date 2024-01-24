@@ -1,6 +1,5 @@
-﻿
+﻿using FlaschenPostAPI.Util;
 using FlaschenpostModels.Interfaces.Repositories;
-using FlaschenPostAPI.Helper;
 using FlaschenpostModels.Models;
 
 #nullable disable
@@ -9,18 +8,24 @@ namespace FlaschenPostAPI.Repo
 {
     public class BottleRepo : IBottleRepo
     {
+        private IBottleUtil BottleUtil { get; set; }
+        public BottleRepo(IBottleUtil bottleUtil)
+        {
+            BottleUtil = bottleUtil;
+        }
+
         public List<Beer> GetCheapestBeer()
         {
             return null;
         }
         public List<Beer> GetAllBeer()
         {
-            return BeerHelper.GetBeerData();
+            return BottleUtil.GetBeerData();
         }
         
         public List<Beer> getBeersByExactPrice(double price)
         {
-            List<Beer> ListofBeers = BeerHelper.GetBeerData();
+            List<Beer> ListofBeers = BottleUtil.GetBeerData();
             List<Beer> RtnList = new List<Beer>();
 
             foreach (var Beer in ListofBeers)
@@ -42,7 +47,7 @@ namespace FlaschenPostAPI.Repo
 
         public Article GetMostbootledBeer()
         {
-            List<Beer> ListofBeers = BeerHelper.GetBeerData();
+            List<Beer> ListofBeers = BottleUtil.GetBeerData();
             Article article = null;
             foreach (Beer Beer in ListofBeers)
             {
@@ -54,8 +59,8 @@ namespace FlaschenPostAPI.Repo
                     }
                     else
                     {
-                        double ThisArcticleBottles = BeerHelper.GetAmountBottles(article.pricePerUnitText);
-                        double NextArticleBottles = BeerHelper.GetAmountBottles(BeerArticle.pricePerUnitText);
+                        double ThisArcticleBottles = BottleUtil.GetAmountBottles(article.pricePerUnitText);
+                        double NextArticleBottles = BottleUtil.GetAmountBottles(BeerArticle.pricePerUnitText);
 
                         //Der erste Eintrag mit der höchsten Anzahl verändert sich so nicht mehr
                         if (ThisArcticleBottles < NextArticleBottles) 
@@ -70,7 +75,7 @@ namespace FlaschenPostAPI.Repo
         
         public List<Beer> GetMostExpensiveBeer()
         {
-            List<Beer> ListofBeers = BeerHelper.GetBeerData();
+            List<Beer> ListofBeers = BottleUtil.GetBeerData();
             List<Beer> MostExpensiveBeer = new List<Beer>();
             MostExpensiveBeer.Add(ListofBeers[0]);
 
@@ -86,7 +91,7 @@ namespace FlaschenPostAPI.Repo
         
         public Beer GetBestBeer()
         {
-            return BeerHelper.GetBeerData().Where(Beer => Beer.Id == 70).FirstOrDefault();
+            return BottleUtil.GetBeerData().Where(Beer => Beer.Id == 70).FirstOrDefault();
         }
     }
 }

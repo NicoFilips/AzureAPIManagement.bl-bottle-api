@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FlaschenPostAPI.Repo;
+using FlaschenpostModels.Interfaces.Repositories;
 using FlaschenpostModels.Models;
 
 namespace FlaschenPostAPI.Controllers
@@ -8,21 +9,24 @@ namespace FlaschenPostAPI.Controllers
     [Route("[controller]")]
     public class BeerController : Controller
     {
+        private IBottleRepo _bottleRepo { get; set; }
+        public BeerController(IBottleRepo bottleRepo)
+        {
+            _bottleRepo = bottleRepo;
+        }
+        
         [HttpGet]
         [Route("TeuerstesBier")]
         public List<Beer> GetTeuerstesBier()
         {
-            BottleRepo Repo = new BottleRepo();
-            //return Repo.GetMostExpensiveBeer();
-            return Repo.GetAllBeer();
+            return _bottleRepo.GetMostExpensiveBeer();
         }
 
         [HttpGet]
         [Route("BilligstesBier")]
         public List<Beer> GetBilligstesBier()
         {
-            BottleRepo Repo = new BottleRepo();
-            return Repo.GetCheapestBeer();
+            return _bottleRepo.GetCheapestBeer();
         }
 
         //Auf Parameter zwecks Requesthandling verzichtet
@@ -30,16 +34,14 @@ namespace FlaschenPostAPI.Controllers
         [Route("BeerWithPrice17_99")]
         public IEnumerable<Beer> GetBeersbyPrice()
         {
-            BottleRepo Repo = new BottleRepo();
-            return Repo.getBeersByExactPrice(17.99);
+            return _bottleRepo.getBeersByExactPrice(17.99);
         }
 
         [HttpGet]
         [Route("MostBottledBeer")]
         public Article GetBeersWithMostBottles()
         {
-            BottleRepo Repo = new BottleRepo();
-            return Repo.GetMostbootledBeer();
+            return _bottleRepo.GetMostbootledBeer();
         }
     }
 }

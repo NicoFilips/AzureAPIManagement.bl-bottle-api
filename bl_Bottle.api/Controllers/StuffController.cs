@@ -10,7 +10,7 @@ namespace FlaschenPostAPI.Controllers
             [HttpGet(Name = "GetStuff")]
             public List<Beer> GetStuff()
             {
-                BottleRepo Repo = new BottleRepo();
+                BottleRepo Repo = BottleRepo.Instance;
                 return Repo.GetMostExpensiveBeer();
             }
     }
