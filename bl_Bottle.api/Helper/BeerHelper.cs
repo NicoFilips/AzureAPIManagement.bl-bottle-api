@@ -17,7 +17,7 @@ namespace FlaschenPostAPI.Helper
                 json = result.Content.ReadAsStringAsync().Result;
             }
             data = JsonConvert.DeserializeObject<List<Beer>>(json); 
-            return data;
+            return data ?? throw new InvalidOperationException("Endpoint returned no data");
         }
 
         public static double BeerpricePerLitre(string pricePerUnit) 

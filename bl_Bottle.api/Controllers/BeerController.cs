@@ -12,7 +12,7 @@ namespace FlaschenPostAPI.Controllers
         [Route("TeuerstesBier")]
         public List<Beer> GetTeuerstesBier()
         {
-            FlaschenpostGetRepo Repo = new FlaschenpostGetRepo();
+            BottleRepo Repo = new BottleRepo();
             //return Repo.GetMostExpensiveBeer();
             return Repo.GetAllBeer();
         }
@@ -21,7 +21,7 @@ namespace FlaschenPostAPI.Controllers
         [Route("BilligstesBier")]
         public List<Beer> GetBilligstesBier()
         {
-            FlaschenpostGetRepo Repo = new FlaschenpostGetRepo();
+            BottleRepo Repo = new BottleRepo();
             return Repo.GetCheapestBeer();
         }
 
@@ -30,7 +30,7 @@ namespace FlaschenPostAPI.Controllers
         [Route("BeerWithPrice17_99")]
         public IEnumerable<Beer> GetBeersbyPrice()
         {
-            FlaschenpostGetRepo Repo = new FlaschenpostGetRepo();
+            BottleRepo Repo = new BottleRepo();
             return Repo.GetBeersByPrice(17.99);
         }
 
@@ -38,7 +38,7 @@ namespace FlaschenPostAPI.Controllers
         [Route("MostBottledBeer")]
         public Article GetBeersWithMostBottles()
         {
-            FlaschenpostGetRepo Repo = new FlaschenpostGetRepo();
+            BottleRepo Repo = new BottleRepo();
             return Repo.GetMostbootledBeer();
         }
     }
