@@ -2,7 +2,7 @@
 <br />
 <div align="center">
 <a href="https://github.com/NicoFilips/CookieClicker.io/">
-  <img src="https://user-images.githubusercontent.com/35654361/298979265-c38a7196-367b-45fa-b9de-d746e54e2bf8.png" alt="Logo" width="200" height="200">
+  <img src="https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/assets/35654361/c38a7196-367b-45fa-b9de-d746e54e2bf8" alt="Logo" width="200" height="200">
 </a>
 
 <blockquote>
