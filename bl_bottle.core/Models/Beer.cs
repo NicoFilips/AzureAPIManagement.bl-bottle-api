@@ -8,10 +8,10 @@ namespace FlaschenpostModels
         [JsonPropertyName("Id")]
         public int Id { get; set; }
         [JsonPropertyName("brandName")]
-        public string? brandName { get; set; }
+        public string? BrandName { get; set; }
         [JsonPropertyName("name")]
-        public string? name { get; set; }
+        public string? Name { get; set; }
         [JsonPropertyName("articles")]
-        public List<Article>? Angebote { get; set; }
+        public List<Article>? Offers { get; set; }
     }
 }

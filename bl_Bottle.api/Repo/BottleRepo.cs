@@ -26,7 +26,7 @@ namespace FlaschenPostAPI.Repo
             foreach (var Beer in ListofBeers)
             {
                 bool isExactPrice = false;
-                foreach (var Article in Beer.Angebote)
+                foreach (var Article in Beer.Offers)
                 {
                     if (Article.price == 17.99)
                     {
@@ -46,7 +46,7 @@ namespace FlaschenPostAPI.Repo
             Article article = null;
             foreach (Beer Beer in ListofBeers)
             {
-                foreach (Article BeerArticle in Beer.Angebote)
+                foreach (Article BeerArticle in Beer.Offers)
                 {
                     if (article == null)
                     {
@@ -76,7 +76,7 @@ namespace FlaschenPostAPI.Repo
 
             foreach (var Beer in ListofBeers)
             {
-                foreach (var Article in Beer.Angebote)
+                foreach (var Article in Beer.Offers)
                 {
 
                 }
