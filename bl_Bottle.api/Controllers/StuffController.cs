@@ -7,11 +7,17 @@ namespace FlaschenPostAPI.Controllers
     [Route("[controller]")]
     public class StuffController : Controller
     {
-            [HttpGet(Name = "GetStuff")]
-            public List<Beer> GetStuff()
-            {
-                BottleRepo Repo = new BottleRepo();
-                return Repo.GetMostExpensiveBeer();
-            }
+        private BottleRepo _bottleRepo { get; set; }
+
+        public StuffController(BottleRepo bottleRepo)
+        {
+            _bottleRepo = bottleRepo;
+        }
+
+        [HttpGet(Name = "GetStuff")]
+        public List<Beer> GetStuff()
+        {
+            return _bottleRepo.GetMostExpensiveBeer();
+        }
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface defining utility methods for beer data handling.
     /// </summary>
-    public interface IBeerUtil
+    public interface IBottleUtil
     {
         /// <summary>
         /// Retrieves a list of Beer objects from a JSON source.

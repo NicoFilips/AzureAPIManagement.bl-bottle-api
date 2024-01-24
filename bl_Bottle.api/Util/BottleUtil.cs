@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace FlaschenPostAPI.Util
 {
-    public class BeerUtil : IBeerUtil
+    public class BottleUtil : IBottleUtil
     {
         public List<Beer> GetBeerData()
         {
