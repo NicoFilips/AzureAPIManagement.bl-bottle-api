@@ -1,27 +1,22 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace FlaschenpostModels.Models
 {
     public class Article
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public int id { get; set; }
-        [JsonProperty("shortDescription")]
+        [JsonPropertyName("shortDescription")]
         public string? shortDescription { get; set; }
-        [JsonProperty("price")]
+        [JsonPropertyName("price")]
         public double? price { get; set; }
-        [JsonProperty("unit")]
+        [JsonPropertyName("unit")]
         public eEinheit unit;
         //[JsonProperty("unit")]
         //string? unit { get; set; }
-        [JsonProperty("pricePerUnitText")]
+        [JsonPropertyName("pricePerUnitText")]
         public string? pricePerUnitText { get; set; }
-        [JsonProperty("Image")]
+        [JsonPropertyName("Image")]
         public string? Image { get; set; }
     }
 }

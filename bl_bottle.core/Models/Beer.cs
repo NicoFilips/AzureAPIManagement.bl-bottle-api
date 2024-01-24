@@ -1,17 +1,17 @@
-﻿using FlaschenpostModels.Models;
-using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using FlaschenpostModels.Models;
 
 namespace FlaschenpostModels
 {
     public class Beer
     {
-        [JsonProperty("Id")]
+        [JsonPropertyName("Id")]
         public int Id { get; set; }
-        [JsonProperty("brandName")]
+        [JsonPropertyName("brandName")]
         public string? brandName { get; set; }
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string? name { get; set; }
-        [JsonProperty("articles")]
+        [JsonPropertyName("articles")]
         public List<Article>? Angebote { get; set; }
     }
 }

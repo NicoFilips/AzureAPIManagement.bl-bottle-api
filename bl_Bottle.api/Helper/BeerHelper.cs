@@ -1,5 +1,6 @@
 ﻿global using FlaschenpostModels;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace FlaschenPostAPI.Helper
@@ -16,7 +17,7 @@ namespace FlaschenPostAPI.Helper
                 var result = client.GetAsync(endpoint).Result;
                 json = result.Content.ReadAsStringAsync().Result;
             }
-            data = JsonConvert.DeserializeObject<List<Beer>>(json); 
+            data = JsonSerializer.Deserialize<List<Beer>>(json);
             return data ?? throw new InvalidOperationException("Endpoint returned no data");
         }
 
