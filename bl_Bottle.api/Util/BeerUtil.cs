@@ -3,9 +3,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace FlaschenPostAPI.Helper
+namespace FlaschenPostAPI.Util
 {
-    public static class BeerHelper
+    public static class BeerUtil : IBeerUtil
     {
         public static List<Beer> GetBeerData()
         {
