@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace FlaschenPostAPI.Util
 {
-    public static class BeerUtil : IBeerUtil
+    public class BeerUtil : IBeerUtil
     {
-        public static List<Beer> GetBeerData()
+        public List<Beer> GetBeerData()
         {
             List<Beer>? data = new List<Beer>();
             var json ="";
@@ -21,7 +21,7 @@ namespace FlaschenPostAPI.Util
             return data ?? throw new InvalidOperationException("Endpoint returned no data");
         }
 
-        public static double BeerpricePerLitre(string pricePerUnit) 
+        public double BeerpricePerLitre(string pricePerUnit) 
         {
             if (Regex.IsMatch(pricePerUnit, "\\((.*?)\\)")) //Feld muss zwischen Klammern stehen
             {
@@ -33,7 +33,7 @@ namespace FlaschenPostAPI.Util
             }
             throw new Exception("Das JSON Feld hat nicht das richtige Format");
         }
-        public static double GetAmountBottles(string shortDescription) 
+        public double GetAmountBottles(string shortDescription) 
         {
             return Double.Parse(shortDescription.Split("x")[0].Trim());
         }
