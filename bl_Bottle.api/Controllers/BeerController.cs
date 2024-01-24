@@ -31,7 +31,7 @@ namespace FlaschenPostAPI.Controllers
         public IEnumerable<Beer> GetBeersbyPrice()
         {
             BottleRepo Repo = new BottleRepo();
-            return Repo.GetBeersByPrice(17.99);
+            return Repo.getBeersByExactPrice(17.99);
         }
 
         [HttpGet]
