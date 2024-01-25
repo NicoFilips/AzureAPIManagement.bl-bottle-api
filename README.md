@@ -9,6 +9,9 @@
   <p>Source: DALL-E 3</p>
 </blockquote>
 
+[![Deploy to Azure](https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/actions/workflows/Deploy-azure.yml/badge.svg)](https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/actions/workflows/Deploy-azure.yml)
+
+[![Build](https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/actions/workflows/build.yml/badge.svg)](https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/actions/workflows/build.yml) [![Test](https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/actions/workflows/test.yml/badge.svg)](https://github.com/NicoFilips/AzureAPIManagement.bl_BottleApi/actions/workflows/test.yml)
 
 # 🍺 bl_bottleApi API 🚀
 
